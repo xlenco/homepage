@@ -8,14 +8,14 @@ const appConfig = useAppConfig()
 </script>
 
 <template>
-    <ZLAvatar class="avatar" />
+    <ZhiluAvatar class="avatar" />
     <div class="wrapper">
         <ZField label="<span style='font-size: 3rem;'>👋</span>">
             <h1 style="font-size: 3rem;">
                 你好，<br>我是<mark>{{ appConfig.author.name }}</mark>
             </h1>
             <p class="desc">
-                {{ appConfig.description }}
+                {{ appConfig.subtitle }}
             </p>
             <div>
                 <ZButton icon="ph:files-duotone" to="https://blog.xlenco.top/">
@@ -36,11 +36,8 @@ const appConfig = useAppConfig()
 <!-- 
         <ZField label="近期活动">
             <p>
-                7 月完善<ZLink to="https://wiki.cooo.site/">
-                    西邮Wiki
-                </ZLink>，8 月使用 Nuxt Content 重构了<ZLink to="https://blog.zhilu.cyou/">
-                    个人博客
-                </ZLink>，但还未完成。
+                <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
+                7 月完善<ZLink to="https://wiki.cooo.site/">西邮Wiki</ZLink>，8 月使用 Nuxt Content 重构了<ZLink to="https://blog.zhilu.cyou/">个人博客</ZLink>，近期持续开发中。
             </p>
         </ZField>
 
@@ -59,7 +56,7 @@ const appConfig = useAppConfig()
     </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .avatar {
     position: fixed;
     opacity: 0.2;

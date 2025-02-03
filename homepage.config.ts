@@ -1,4 +1,4 @@
-import type { NavGroup } from '~/types/nav'
+// 存储 nuxt.config 和 app.config 共用的配置
 
 const author = {
     name: 'Xlenco',

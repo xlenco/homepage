@@ -1,15 +1,19 @@
-import { type X2jOptions, XMLParser } from 'fast-xml-parser'
+import { XMLParser } from 'fast-xml-parser'
 import homepageConfig from '~~/homepage.config'
 
 export default defineCachedEventHandler(async (_event) => {
-    const resp = await fetch(homepageConfig.blogAtom)
-    const parseOptions: X2jOptions = {
-        ignoreAttributes: false,
+    const parser = new XMLParser({
         attributeNamePrefix: '$',
-    }
-    const objAtom = new XMLParser(parseOptions).parse(await resp.text())
+        cdataPropName: '$',
+        ignoreAttributes: false,
+        isArray: name => name === 'entry',
+        textNodeName: '_',
+    })
 
-    return objAtom.feed.entry
+    const resp = await fetch(homepageConfig.blogAtom)
+
+    const objAtom = parser.parse(await resp.text())
+    return objAtom.feed?.entry
 }, {
     maxAge: 60 * 60 * 24,
 })

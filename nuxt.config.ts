@@ -8,11 +8,11 @@ export default defineNuxtConfig({
                 lang: homepageConfig.language,
             },
             link: [
-                ...homepageConfig.injectHeadLinks,
-                {
-                    rel: 'icon',
-                    href: homepageConfig.favicon,
-                },
+                { rel: 'icon', href: homepageConfig.favicon },
+            ],
+            meta: [
+                { name: 'author', content: `${homepageConfig.author.name} <${homepageConfig.author.email}>` },
+                { 'name': 'generator', 'data-github-repo': 'https://github.com/L33Z22L11/homepage-v5' },
             ],
             templateParams: {
                 separator: '|',
@@ -21,22 +21,24 @@ export default defineNuxtConfig({
         },
     },
 
-    appConfig: homepageConfig,
-
     compatibilityDate: '2024-08-03',
 
     components: [
         { path: '~/components/partial', prefix: 'Z' },
-        { path: '~/components/zhilu', prefix: 'ZL' },
         '~/components',
     ],
 
     css: [
+        '@/assets/color.scss',
         '@/assets/main.scss',
     ],
 
     experimental: {
         viewTransition: true,
+    },
+
+    features: {
+        inlineStyles: false,
     },
 
     future: {
@@ -47,15 +49,11 @@ export default defineNuxtConfig({
         css: {
             preprocessorOptions: {
                 scss: {
-                    additionalData: '@import "@/assets/variable.scss";',
+                    additionalData: '@use "@/assets/_variable.scss" as *;',
+                    api: 'modern-compiler',
                 },
             },
         },
-    },
-
-    vue: {
-        propsDestructure: true,
-        runtimeCompiler: true,
     },
 
     modules: [
@@ -74,9 +72,16 @@ export default defineNuxtConfig({
     },
 
     image: {
-        domains: homepageConfig.imageDomains,
+        domains: [],
         format: ['avif', 'webp'],
     },
 
-    site: { url: homepageConfig.url },
+    ogImage: {
+        enabled: false,
+    },
+
+    site: {
+        name: homepageConfig.title,
+        url: homepageConfig.url,
+    },
 })
