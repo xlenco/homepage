@@ -33,13 +33,7 @@ const appConfig = useAppConfig()
             </p>
         </ZField>
 
-<!-- 
-        <ZField label="近期活动">
-            <p>
-                <!-- eslint-disable-next-line vue/singleline-html-element-content-newline -->
-                7 月完善<ZLink to="https://wiki.cooo.site/">西邮Wiki</ZLink>，8 月使用 Nuxt Content 重构了<ZLink to="https://blog.zhilu.cyou/">个人博客</ZLink>，近期持续开发中。
-            </p>
-        </ZField>
+
 
         <ZField label="关于主页">
             <p>
