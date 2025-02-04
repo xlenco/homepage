@@ -3,7 +3,7 @@
 const author = {
     name: 'Xlenco',
     avatar: 'https://q.qlogo.cn/headimg_dl?dst_uin=1043865083&spec=640&img_type=webp',
-    email: 'xlenco@email.cn',
+    email: 'xlenco@hotmail.com',
     homepage: 'https://xlenco.top',
 }
 
