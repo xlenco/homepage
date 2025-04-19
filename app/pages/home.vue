@@ -29,7 +29,7 @@ const appConfig = useAppConfig()
 
         <ZField label="介绍">
             <p>
-                 一名菜菜的高中生
+                一名菜菜的高中生
             </p>
         </ZField>
 
@@ -46,7 +46,7 @@ const appConfig = useAppConfig()
             </p>
         </ZField>
 
-        -->
+
     </div>
 </template>
 
