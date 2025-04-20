@@ -27,11 +27,7 @@ export default {
     injectHeadLinks: [
         // { rel: 'stylesheet', href: '//s1.hdslb.com/bfs/static/jinkela/long/font/medium.css', media: 'none', onload: 'this.media="all"' },
     ],
-    scripts: [
-        // 自己部署的 Umami 统计服务
-        { 'src': 'https://umami.xlenco.top/script.js', 'data-website-id': 'b6493baa-9acf-4602-84a5-8568cce99b67', 'defer': true },
 
-    ],
     nav: <NavGroup[]>[
         {
             title: '',

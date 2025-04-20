@@ -14,6 +14,10 @@ export default defineNuxtConfig({
                 { name: 'author', content: `${homepageConfig.author.name} <${homepageConfig.author.email}>` },
                 { 'name': 'generator', 'data-github-repo': 'https://github.com/L33Z22L11/homepage-v5' },
             ],
+            script: [
+                // 自己部署的 Umami 统计服务
+                { 'src': 'https://umami.xlenco.top/script.js', 'data-website-id': 'b6493baa-9acf-4602-84a5-8568cce99b67', 'defer': true },
+            ],
             templateParams: {
                 separator: '|',
             },
@@ -56,14 +60,7 @@ export default defineNuxtConfig({
         },
     },
 
-    modules: [
-        '@nuxt/icon',
-        '@nuxt/image',
-        '@nuxtjs/color-mode',
-        '@nuxtjs/seo',
-        '@pinia/nuxt',
-        '@vueuse/nuxt',
-    ],
+    modules: ['@nuxt/icon', '@nuxt/image', '@nuxtjs/color-mode', '@nuxtjs/seo', '@pinia/nuxt', '@vueuse/nuxt', '@nuxt/scripts'],
 
     colorMode: {
         preference: 'system',
